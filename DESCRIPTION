@@ -1,11 +1,10 @@
 Package: hpy
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Hierarchical Pitman Yor Model for Microbial Abundance Data
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: Kevin McGregor, Aurelie Labbe, Celia M.T. Greenwood, Todd L. Parsons, Christopher Quince
+Maintainer: Kevin McGregor <kevinmcg@yorku.ca>
+Description: Hierarchical Pitman-Yor Gibbs sampler and diversity estimation
+License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
