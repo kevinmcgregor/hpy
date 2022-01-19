@@ -1,17 +1,29 @@
-#' HPY sampler
+#' Hierarchical Pitman-Yor Gibbs sampler
 #'
-#' @param Y Matrix of taxa counts (rows are populations, columns are species)
+#' @param Y Matrix of taxon counts (rows are populations, columns are species)
 #' @param n.iter Number of MCMC iterations (after burn-in)
-#' @param quiet If TRUE, console output is suppressed
 #' @param n.burn Number of burn-in iterations
+#' @param p.shape Shape parameter for gamma prior on top-level concentration parameter
+#' @param p.scale Scale parameter for gamma prior on top-level concentration parameter
+#' @param p.shape.pop Vector with length equal to number of populations containing shape parameters for gamma priors on population-level concentration parameter
+#' @param p.scale.pop Vector with length equal to number of populations containing scale parameters for gamma priors on population-level concentration parameter
+#' @param type Type of hierarchical process: "py" for Pitman-Yor process, "dp" for Dirichlet process
+#' @param quiet Set to TRUE to suppress console output
 #'
-#' @return
+#' @return Returns a list containing the following elements:
+#' \itemize{
+#'   \item gamma, alpha, theta, sigma - Vectors containing posterior samples for each of the HPY parameters.
+#'   \item tab - List with table indicators for each population.
+#'   \item t.c - Table counts (and species corresponding to each table)
+#'   \item n.tab - Number of tables in each population
+#'   \item n.s.tab - Number of tables for a given species in each population
+#' }
 #' @export
-#' @importFrom parallel
+#'
+#' @import gStirling
 #'
 #' @examples
-b_sampler <- function(Y, n.iter, n.burn, p.shape, p.scale, p.shape.pop=NULL, p.scale.pop=NULL, type=c("py", "dp"),
-                      n.cores=1, quiet=FALSE) {
+hpySampler <- function(Y, n.iter, n.burn, p.shape, p.scale, p.shape.pop=NULL, p.scale.pop=NULL, type=c("py", "dp"), quiet=FALSE) {
   if (!is.numeric(Y) | !is.matrix(Y) |
       any(Y<0) | any(Y!=floor(Y))) stop("Y must be a numeric matrix of positive counts")
 
@@ -63,7 +75,6 @@ b_sampler <- function(Y, n.iter, n.burn, p.shape, p.scale, p.shape.pop=NULL, p.s
 
   # Loop over MCMC iterations
   for (i in 1:(n.burn+n.iter)) {
-    cat("i =", i, "\n")
     idx <- i - n.burn
 
     if (!quiet & i==1) cat("Beginning burn-in:", "\n")
@@ -139,6 +150,5 @@ b_sampler <- function(Y, n.iter, n.burn, p.shape, p.scale, p.shape.pop=NULL, p.s
   }
 
   return(list(gamma=gamma.s, alpha=alpha.s, theta=theta.s, sigma=sigma.s,
-              tab=tab, t.c=t.c.s, n.tab=n.tab.s, n.s.tab=n.s.tab.s,
-              p.shape=p.shape, p.scale=p.scale))
+              tab=tab, t.c=t.c.s, n.tab=n.tab.s, n.s.tab=n.s.tab.s))
 }
