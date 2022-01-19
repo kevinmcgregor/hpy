@@ -1,14 +1,12 @@
 Package: hpy
 Title: Hierarchical Pitman Yor Model for Microbial Abundance Data
 Version: 0.0.0.9000
-Authors@R: 
-    person(given = "Kevin",
-           family = "McGregor",
-           role = c("aut", "cre"),
-           email = "kevinmcg@yorku.ca"),
-	person(given = "Aurelie",
-           family = "Labbe",
-           role = c("aut"))
+Authors@R: c(
+    person("Kevin", "McGregor",, "kevinmcg@yorku.ca", c("aut", "cre")),
+    person("Aurelie", "Labbe",, "aurelie.labbe@hec.ca", c("aut")),
+    person("Celia", "Greenwood", role = c("aut")),
+    person("RStudio", role = "but")
+    )
 Description: Hierarchical Pitman-Yor Gibbs sampler and diversity estimation.
 License: `use_gpl3_license()`
 Encoding: UTF-8
