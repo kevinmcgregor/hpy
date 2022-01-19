@@ -38,11 +38,11 @@ hpySampler(
 \value{
 Returns a list containing the following elements:
 \itemize{
-  \item gamma, alpha, theta, sigma - Vectors containing posterior samples for each of the HPY parameters.
-  \item tab - List with table indicators for each population.
-  \item t.c - Table counts (and species corresponding to each table)
-  \item n.tab - Number of tables in each population
-  \item n.s.tab - Number of tables for a given species in each population
+\item gamma, alpha, theta, sigma - Vectors containing posterior samples for each of the HPY parameters.
+\item tab - List with table indicators for each population.
+\item t.c - Table counts (and species corresponding to each table)
+\item n.tab - Number of tables in each population
+\item n.s.tab - Number of tables for a given species in each population
 }
 }
 \description{

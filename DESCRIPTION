@@ -1,11 +1,18 @@
 Package: hpy
-Type: Package
 Title: Hierarchical Pitman Yor Model for Microbial Abundance Data
-Version: 0.1.0
-Author: Kevin McGregor, Aurelie Labbe, Celia M.T. Greenwood, Todd L. Parsons, Christopher Quince
-Maintainer: Kevin McGregor <kevinmcg@yorku.ca>
-Description: Hierarchical Pitman-Yor Gibbs sampler and diversity estimation
-License: GPL (>= 3)
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Kevin",
+           family = "McGregor",
+           role = c("aut", "cre"),
+           email = "kevinmcg@yorku.ca")),
+	person(given = "Aurelie",
+           family = "Labbe",
+           role = c("aut"))
+Description: Hierarchical Pitman-Yor Gibbs sampler and diversity estimation.
+License: `use_gpl3_license()`
 Encoding: UTF-8
 LazyData: true
+Imports: gStirling (>= 0.0.0.9001)
+Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
