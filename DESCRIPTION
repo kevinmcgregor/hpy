@@ -5,10 +5,10 @@ Authors@R:
     person(given = "Kevin",
            family = "McGregor",
            role = c("aut", "cre"),
-           email = "kevinmcg@yorku.ca")),
+           email = "kevinmcg@yorku.ca"),
 	person(given = "Aurelie",
            family = "Labbe",
-           role = c("aut"))
+           role = c("aut")
 Description: Hierarchical Pitman-Yor Gibbs sampler and diversity estimation.
 License: `use_gpl3_license()`
 Encoding: UTF-8
