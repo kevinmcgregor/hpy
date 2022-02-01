@@ -12,7 +12,6 @@ if (!require(devtools)) {
 devtools::install_github("kevinmcgregor/gStirling")
 ```
 
-
 To install hpy run:
 ```r
 install_github("kevinmcgregor/hpy")
